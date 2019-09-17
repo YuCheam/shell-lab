@@ -1,0 +1,11 @@
+./sdriver.pl -t trace08.txt -s ./tshref -a "-p"
+#
+# trace08.txt - Forward SIGTSTP only to foreground job.
+#
+tsh> ./myspin 4 &
+[1] (5951) ./myspin 4 &
+tsh> ./myspin 5
+Job [2] (5953) stopped by signal 20
+tsh> jobs
+[1] (5951) Running ./myspin 4 &
+[2] (5953) Stopped ./myspin 5 
